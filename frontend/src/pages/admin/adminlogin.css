@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+
+
+.login3 {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 50px;
+    height: 100vh; /* Add this line to set the height to 100% of viewport height */
+  }
+  
+
+.form3 {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto 100px;
+  padding: 35px;
+  text-align: center;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: -11px 11px 22px #bebebe, 11px -11px 22px #ffffff;
+}
+
+.form3 .input3 {
+  outline: 0;
+  background: #e0e0e0;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.form3 .input3:focus {
+  background: #e0e0e0;
+}
+
+.form3 .button3 {
+  font-family: 'Comfortaa', cursive;
+  text-transform: uppercase;
+  outline: 0;
+  background: #e0e0e0;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.form3 .button3:active {
+  background: black;
+}
+

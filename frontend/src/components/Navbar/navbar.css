@@ -1,0 +1,127 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar-logo img {
+  height: 30px;
+  width: 100px;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-right: 125px;
+}
+
+.navbar-item a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-item a svg {
+  margin-right: 5px;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-name {
+  margin-left: 5px;
+  color: white;
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.navbar-auth-link {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-auth-separator {
+  margin: 0 5px;
+  color: white;
+}
+
+.navbar-item a:hover,
+.navbar-icons a:hover,
+.navbar-name:hover {
+  color: cyan;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  opacity: 0; /* Initially set opacity to 0 */
+  visibility: hidden; /* Initially set visibility to hidden */
+  flex-direction: column;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transition: opacity 0.2s ease, visibility 0.2s ease; /* Add transition effect */
+}
+
+.navbar-dropdown:hover .dropdown-menu {
+  opacity: 1; 
+  visibility: visible; 
+  margin-top: 11px;
+}
+
+.navbar-dropdown {
+  position: relative;
+}
+
+.dropdown-menu li {
+  margin-bottom: 8px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f8f8f8;
+  text-decoration: none;
+}
+
+.dropdown-menu li {
+  list-style-type: none; /* Remove bullets from dropdown menu */
+}
