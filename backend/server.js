@@ -39,11 +39,8 @@ app.use("/shop", shopRoutes);
 app.use("/auth", authRoutes);
 
 mongoose.connect(MONGODB_URI).then(() => {
-  User.findOne().then((user) => {
-    // if (!user) {
-    //   User.create({ email: "aayushpotter555@gmail.com", password: "pickachu777" });
-    // }
-  });
+  console.log("MongoDB is connected")
+ 
   app.listen(3000);
   console.log("App is listening at port 3000");
 });
