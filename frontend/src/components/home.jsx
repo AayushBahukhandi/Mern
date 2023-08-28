@@ -87,7 +87,7 @@ const Home = () => {
             {getRandomProducts(4).map((product) => (
               <div key={product.id} className="product-item">
                 <img
-                   src={'http://localhost:3000/' +product.image}
+                   src={`${process.env.REACT_APP_BACKEND_URL}${product.image}`}   
                   alt={product.name}
                   className="product-image"
                 />
@@ -104,7 +104,7 @@ const Home = () => {
             {getRandomProducts(4).map((product) => (
               <div key={product.id} className="product-item">
                 <img
-                   src={'http://localhost:3000/' +product.image}
+                   src={`${process.env.REACT_APP_BACKEND_URL}${product.image}`}   
                   alt={product.name}
                   className="product-image"
                 />
