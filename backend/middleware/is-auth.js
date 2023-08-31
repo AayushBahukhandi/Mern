@@ -1,18 +1,23 @@
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
+const User = require("../models/user");
 
-module.exports=(req,res,next)=>{
-    console.log(req.method);
-    if(req.method == 'OPTIONS'){
-        return next()
+module.exports = async (req, res, next) => {
+  if (req.method == "OPTIONS") {
+    return next();
+  }
+  try {
+    const token = req.headers.authorization.split(" ")[1];
+    if (!token) {
+      throw err;
     }
-    if(req.headers.authorization){
-        const token = req.headers.authorization.split(' ')[1]
-        console.log("admin prod" +token);
-        try{
-            const decodedToken = jwt.verify(token, 'Secret Key')
-            return next()
-        }catch(err){
-            res.status(401).json("Not Authorized")
-        }
+    const decodedToken = jwt.verify(token,'Secret Key');
+    const user = await User.findById(decodedToken.userId);
+    if (!user) {
+      return res.status(403).json({ message: "User does not exists" });
     }
-}
+    req.user = user;
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "Not Authorized" });
+  }
+};
