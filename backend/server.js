@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  User.findById("64a50d41d75397ca387d4af9")
+  User.findById("64f02bf0590dde03acf361f8")
     .then((user) => {
       req.user = user;
       next();
@@ -39,8 +39,11 @@ app.use("/shop", shopRoutes);
 app.use("/auth", authRoutes);
 
 mongoose.connect(MONGODB_URI).then(() => {
-  console.log("MongoDB is connected")
- 
-  app.listen(3001);
-  console.log("App is listening at port 3001");
+  User.findOne().then((user) => {
+    // if (!user) {
+    //   User.create({ email: "aayushpotter555@gmail.com", password: "pickachu777" });
+    // }
+  });
+  app.listen(3000);
+  console.log("App is listening at port 3000");
 });
