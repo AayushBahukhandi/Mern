@@ -25,7 +25,14 @@ app.use((req, res, next) => {
   next();
 });
 
-
+app.use((req, res, next) => {
+  User.findById("64a50d41d75397ca387d4af9")
+    .then((user) => {
+      req.user = user;
+      next();
+    })
+    .catch((err) => console.log(err));
+});
 
 app.use("/admin", adminRoutes);
 app.use("/shop", shopRoutes);
@@ -34,6 +41,6 @@ app.use("/auth", authRoutes);
 mongoose.connect(MONGODB_URI).then(() => {
   console.log("MongoDB is connected")
  
-  app.listen(3000);
-  console.log("App is listening at port 3000");
+  app.listen(3001);
+  console.log("App is listening at port 3001");
 });
